@@ -1,0 +1,7 @@
+# Loại bỏ các thư mục nặng và không cần thiết
+node_modules/
+.cache/
+dist/
+build/
+.env
+*.log
