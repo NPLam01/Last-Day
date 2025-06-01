@@ -1,0 +1,61 @@
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+}
+
+.login-wrapper {
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-card {
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.login-logo {
+  height: 60px;
+  width: auto;
+  margin-bottom: 10px;
+}
+
+.login-title {
+  margin-bottom: 8px !important;
+  color: #333;
+}
+
+.login-form {
+  margin-top: 24px;
+}
+
+.login-form .ant-input-affix-wrapper {
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+.login-button {
+  height: 48px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-top: 16px;
+}
+
+.login-footer {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.login-footer .ant-btn-link {
+  padding: 0;
+  font-weight: 600;
+}

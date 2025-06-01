@@ -1,0 +1,90 @@
+.dashboard {
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.dashboard-header {
+  margin-bottom: 24px;
+}
+
+.dashboard-header .ant-typography {
+  margin-bottom: 8px;
+  color: #262626;
+}
+
+.stats-row {
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+  height: 100%;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card .ant-statistic {
+  text-align: center;
+}
+
+.stat-card .ant-statistic-title {
+  font-weight: 500;
+  color: #666;
+}
+
+.stat-card .ant-statistic-content {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.content-row .ant-card {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: none;
+  height: 400px;
+}
+
+.online-users-card .ant-list {
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.activity-card .ant-list {
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.ant-list-item {
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ant-list-item:last-child {
+  border-bottom: none;
+}
+
+/* Custom scrollbar */
+.ant-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.ant-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.ant-list::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 2px;
+}
+
+.ant-list::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}

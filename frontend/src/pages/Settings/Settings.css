@@ -1,0 +1,170 @@
+/* Settings Page Styles */
+.settings-container {
+  padding: 24px;
+  background: #f5f5f5;
+  height: auto;
+}
+
+.settings-header {
+  margin-bottom: 24px;
+}
+
+.settings-header .ant-typography-h2 {
+  margin-bottom: 4px;
+  color: #262626;
+}
+
+/* Avatar Card Styles */
+.avatar-card {
+  height: fit-content;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-section {
+  text-align: center;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-avatar {
+  border: 4px solid #f0f0f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.upload-btn {
+  border-radius: 20px;
+  height: 36px;
+  padding: 0 16px;
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+.user-info {
+  text-align: center;
+  margin-top: 8px;
+}
+
+.user-info .ant-typography {
+  margin-bottom: 0;
+}
+
+/* Profile Card Styles */
+.profile-card {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card .ant-card-head {
+  background: #fafafa;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.profile-card .ant-card-head-title {
+  font-weight: 600;
+  color: #262626;
+}
+
+/* Form Styles */
+.ant-form-item-label > label {
+  font-weight: 500;
+  color: #595959;
+}
+
+.ant-input,
+.ant-select-selector,
+.ant-picker {
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.ant-input:focus,
+.ant-select-focused .ant-select-selector,
+.ant-picker:hover,
+.ant-picker.ant-picker-focused {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+.ant-btn-primary {
+  border-radius: 8px;
+  height: 40px;
+  padding: 0 24px;
+  font-weight: 500;
+  background: linear-gradient(135deg, #1890ff 0%, #40a9ff 100%);
+  border: none;
+  box-shadow: 0 2px 4px rgba(24, 144, 255, 0.2);
+}
+
+.ant-btn-primary:hover {
+  background: linear-gradient(135deg, #40a9ff 0%, #1890ff 100%);
+  box-shadow: 0 4px 8px rgba(24, 144, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Disabled Input Styles */
+.ant-input:disabled {
+  background-color: #f5f5f5;
+  color: #999;
+  cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .settings-container {
+    padding: 16px;
+  }
+  
+  .avatar-card,
+  .profile-card {
+    margin-bottom: 16px;
+  }
+  
+  .user-avatar {
+    width: 100px !important;
+    height: 100px !important;
+  }
+  
+  .profile-card .ant-card-body {
+    padding: 16px;
+  }
+  
+  .avatar-section {
+    padding: 20px 16px;
+    gap: 16px;
+  }
+  
+  .upload-btn {
+    font-size: 12px;
+    height: 32px;
+    padding: 0 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .settings-container {
+    padding: 12px;
+  }
+  
+  .user-avatar {
+    width: 80px !important;
+    height: 80px !important;
+  }
+  
+  .upload-btn {
+    width: 100%;
+    margin-top: 12px;
+  }
+  
+  .avatar-section {
+    padding: 16px 12px;
+    gap: 12px;
+  }
+  
+  .settings-header .ant-typography-h2 {
+    font-size: 20px;
+  }
+}

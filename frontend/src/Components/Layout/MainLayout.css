@@ -1,0 +1,121 @@
+/* Main Layout Styles */
+.main-layout {
+  min-height: 100vh;
+  background: #f5f5f5;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.layout-content {
+  flex: 1;
+  min-height: 100vh;
+  transition: margin-left 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 240px);
+  margin-left: 240px;
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.layout-content.collapsed {
+  margin-left: 80px;
+  width: calc(100% - 80px);
+}
+
+.header-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.content {
+  flex: 1;
+  background: #f5f5f5;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 0; /* Important for flex child overflow */
+}
+
+.content-wrapper {
+  flex: 1;
+  width: 100%;
+  position: relative;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  -webkit-overflow-scrolling: touch;
+}
+
+.content-wrapper {
+  padding: 24px;
+  min-height: calc(100vh - 60px);
+  background: #f5f5f5;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .layout-content {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .layout-content.collapsed {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .content-wrapper {
+    padding: 16px;
+  }
+}
+
+/* Tablet responsive */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .content-wrapper {
+    padding: 20px;
+  }
+}
+
+/* Dark theme support */
+.dark-theme .main-layout {
+  background: #141414;
+}
+
+.dark-theme .content {
+  background: #141414;
+}
+
+.dark-theme .content-wrapper {
+  background: #141414;
+}
+
+.dark-theme .header-wrapper {
+  background: #1f1f1f;
+  border-bottom: 1px solid #303030;
+}
+
+/* Ensure proper layering and prevent overflow */
+.main-layout * {
+  box-sizing: border-box;
+}
+
+.layout-content {
+  overflow: hidden;
+}
+
+.content {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
