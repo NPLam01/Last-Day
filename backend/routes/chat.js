@@ -1,7 +1,8 @@
-const express = require('express');
+import express from 'express';
+import * as chatController from '../controllers/chatController.js';
+import * as middlewareController from '../controllers/middlewareController.js';
+
 const router = express.Router();
-const chatController = require('../controllers/chatController');
-const middlewareController = require('../controllers/middlewareController');
 
 // Send message
 router.post('/send', middlewareController.verifyToken, chatController.sendMessage);
@@ -21,4 +22,4 @@ router.get('/unread-count', middlewareController.verifyToken, chatController.get
 // Get users available for chat
 router.get('/users', middlewareController.verifyToken, chatController.getChatUsers);
 
-module.exports = router;
+export default router;

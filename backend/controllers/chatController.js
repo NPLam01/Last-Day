@@ -1,5 +1,5 @@
-const Message = require('../models/Message');
-const User = require('../models/User');
+import Message from '../models/Message.js';
+import User from '../models/User.js';
 
 const chatController = {
     // Send a new message
@@ -156,4 +156,4 @@ const chatController = {
     }
 };
 
-module.exports = chatController;
+export default chatController;

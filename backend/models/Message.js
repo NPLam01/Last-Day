@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const messageSchema = new mongoose.Schema({
   sender: {
@@ -64,4 +64,4 @@ messageSchema.index(
   { expireAfterSeconds: 30 * 24 * 60 * 60 }
 );
 
-module.exports = mongoose.model('Message', messageSchema);
+export default mongoose.model('Message', messageSchema);

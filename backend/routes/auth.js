@@ -1,8 +1,8 @@
-const authController = require('../controllers/authController');
-const middlewareController = require('../controllers/middlewareController');
-const { verifyToken } = require('../controllers/middlewareController');
+import express from 'express';
+import * as authController from '../controllers/authController.js';
+import * as middlewareController from '../controllers/middlewareController.js';
 
-const router = require('express').Router();
+const router = express.Router();
 
 //Register
 router.post("/register", authController.registerUser);
@@ -30,4 +30,4 @@ router.post("/logout-simple", authController.simpleLogout);
 //HEARTBEAT - Update user's last active status
 router.post("/heartbeat", middlewareController.verifyToken, authController.heartbeat);
 
-module.exports = router;
+export default router;

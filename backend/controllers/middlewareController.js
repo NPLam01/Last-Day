@@ -1,4 +1,4 @@
-﻿const jwt = require('jsonwebtoken');
+import jwt from 'jsonwebtoken';
 
 const middlewareController = {
     verifyToken: (req, res, next) => {
@@ -88,4 +88,4 @@ const middlewareController = {
     }
 };
 
-module.exports = middlewareController;
+export default middlewareController;

@@ -1,16 +1,22 @@
-const express = require('express');
-const cors = require('cors');
-const dotenv = require('dotenv');
-const mongoose = require('mongoose');
-const cookieParser = require('cookie-parser');
-const morgan = require('morgan');
-const { createServer } = require('http');
-const { Server } = require('socket.io');
-const jwt = require('jsonwebtoken');
-const authRoute = require('./routes/auth');
-const userRoute = require('./routes/user');
-const chatRoute = require('./routes/chat');
-const User = require('./models/User');
+import express from 'express';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+import cors from 'cors';
+import dotenv from 'dotenv';
+import mongoose from 'mongoose';
+import cookieParser from 'cookie-parser';
+import morgan from 'morgan';
+import { createServer } from 'http';
+import { Server } from 'socket.io';
+import jwt from 'jsonwebtoken';
+import authRoute from './routes/auth.js';
+import userRoute from './routes/user.js';
+import chatRoute from './routes/chat.js';
+import taskRoute from './routes/taskRoutes.js';
+import User from './models/User.js';
 
 dotenv.config();
 const app = express();
@@ -208,10 +214,14 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(morgan('dev'));
 
+// Serve static files from uploads directory
+app.use('/uploads', express.static('uploads'));
+
 // API Routes with versioning
 app.use('/v1/auth', authRoute);
 app.use('/v1/user', userRoute);
 app.use('/v1/chat', chatRoute);
+app.use('/v1/tasks', taskRoute);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
@@ -228,7 +238,7 @@ app.use((req, res) => {
 });
 
 // Set up interval to check for offline users every minute
-const authController = require('./controllers/authController');
+import authController from './controllers/authController.js';
 setInterval(() => {
   authController.checkOfflineUsers();
 }, 60000); // Check every 60 seconds

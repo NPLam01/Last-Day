@@ -1,6 +1,8 @@
-const router = require('express').Router();
-const middlewareController = require('../controllers/middlewareController');
-const userController = require('../controllers/userController');
+import express from 'express';
+import * as middlewareController from '../controllers/middlewareController.js';
+import * as userController from '../controllers/userController.js';
+
+const router = express.Router();
 
 // Public routes
 router.get('/health', (req, res) => res.status(200).json({ status: 'ok' }));
@@ -17,4 +19,4 @@ router.delete('/:id', middlewareController.verifyAdmin, userController.deleteUse
 // User profile routes
 router.put('/profile', middlewareController.verifyToken, userController.updateProfile);
 
-module.exports = router;
+export default router;

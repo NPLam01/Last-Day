@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({
   username: {
@@ -111,4 +111,4 @@ const userSchema = new mongoose.Schema({
 // Thêm compound index cho tối ưu tìm kiếm
 userSchema.index({ username: 1, email: 1 });
 
-module.exports = mongoose.model('User', userSchema);
+export default mongoose.model('User', userSchema);
