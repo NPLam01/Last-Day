@@ -12,10 +12,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "start:8000": "set PORT=8000 && nodemon index.js",
-    "start:8001": "set PORT=8001 && nodemon index.js",
-    "start:8080": "set PORT=8080 && nodemon index.js",
-    "start:3001": "set PORT=3001 && nodemon index.js"
+
   },
   "dependencies": {
     "bcrypt": "^6.0.0",
